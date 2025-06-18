@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".registration.RegistrationDescriptionFragment">
+
+    <!-- Bouton retour fixe en haut à gauche -->
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:contentDescription="Retour"
+        android:focusable="true"
+        android:tint="@color/less_light_white"
+        app:srcCompat="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Titre centré horizontalement en haut -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Captivez-les"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_30sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ScrollView principal entre titre et bouton continuer -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:padding="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintBottom_toTopOf="@id/button_continue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/label_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Décrivez-vous ! 🕶️"
+                android:textColor="@color/less_light_white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_description"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/input_blue"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:maxLines="10"
+                android:overScrollMode="ifContentScrolls"
+                android:padding="12dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintTop_toBottomOf="@id/label_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/char_count_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0 / 300"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/edit_description"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Centres d’intérêts -->
+            <TextView
+                android:id="@+id/label_interests"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Quels sont vos centres d'intérêts ? 🎯"
+                android:textColor="@color/less_light_white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/char_count_description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_interests"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/input_blue"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:maxLines="10"
+                android:overScrollMode="ifContentScrolls"
+                android:padding="12dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintTop_toBottomOf="@id/label_interests"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/char_count_interests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0 / 300"
+                android:textColor="@color/light_grey"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/edit_interests"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bouton Continuer fixe en bas et centré -->
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="140dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/blue_button"
+        android:text="Continuer"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

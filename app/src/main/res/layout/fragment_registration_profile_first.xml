@@ -1,0 +1,199 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".registration.RegistrationProfileFirstFragment">
+
+    <!-- Bouton retour -->
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:contentDescription="Retour"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow"
+        app:tint="@color/white" />
+
+    <!-- Pseudo -->
+    <EditText
+        android:id="@+id/edit_pseudo"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/input_blue"
+        android:hint="Pseudo"
+        android:inputType="text"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:textColor="@color/light_grey"
+        android:textColorHint="@color/light_grey"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Âge -->
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="! Votre pseudo sera visible"
+        android:textColor="@color/less_light_white"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_pseudo" />
+
+    <Spinner
+        android:id="@+id/spinner_age"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/input_blue"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Genre -->
+    <Spinner
+        android:id="@+id/spinner_genre"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_blue"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/spinner_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Titre recherche -->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Que recherchez-vous ?"
+        android:textColor="@color/less_light_white"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/spinner_genre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Radios -->
+
+    <!-- Titre orientation -->
+    <RadioGroup
+        android:id="@+id/RGroup_needs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView6">
+
+        <RadioButton
+            android:id="@+id/radio_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relation amicale"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/_14sdp"
+            app:buttonTint="@drawable/selector_light_blue" />
+
+        <RadioButton
+            android:id="@+id/radio_love"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relation amoureuse"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/_14sdp"
+            app:buttonTint="@drawable/selector_light_blue" />
+
+        <RadioButton
+            android:id="@+id/radio_feeling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Je ne sais pas, au feeling!"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/_14sdp"
+            app:buttonTint="@drawable/selector_light_blue" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Vous êtes intéressé(e) par les..."
+        android:textColor="@color/less_light_white"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/RGroup_needs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Checkboxes -->
+
+    <CheckBox
+        android:id="@+id/checkBox_men"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="Hommes"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_14sdp"
+        app:buttonTint="@drawable/selector_light_blue"
+        app:layout_constraintEnd_toStartOf="@id/checkBox_women"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+    <!-- Bouton continuer -->
+    <CheckBox
+        android:id="@+id/checkBox_women"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Femmes"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_14sdp"
+        app:buttonTint="@drawable/selector_light_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/checkBox_men"
+        app:layout_constraintTop_toBottomOf="@id/textView7" />
+
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="140dp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/blue_button"
+        android:text="Continuer"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintTop_toBottomOf="@id/checkBox_men"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
