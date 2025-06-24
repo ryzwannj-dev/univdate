@@ -8,6 +8,7 @@
     android:background="@color/dark_grey"
     tools:context=".registration.RegistrationProfileSecondFragment">
 
+    <!-- Bouton retour -->
     <ImageView
         android:id="@+id/back_button"
         android:layout_width="36dp"
@@ -15,72 +16,163 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:clickable="true"
-        android:contentDescription="Retour"
         android:focusable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Retour"
         app:srcCompat="@drawable/ic_back_arrow"
-        app:tint="@color/white" />
-
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:padding="@dimen/_8sdp"
-        android:text="Ne partagez pas vos réseaux sociaux : le but est de matcher grâce à la description. La photo se dévoile peu à peu lors des échanges avec vos matchs."
-        android:textColor="@color/light_grey"
-        android:textSize="@dimen/_11sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:tint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Avertissement -->
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
+        android:id="@+id/warningText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Photo de profil"
-        android:textColor="@color/less_light_white"
-        android:textSize="@dimen/_14sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Ne partagez pas vos réseaux sociaux, sinon l'intérêt de l'application serait compromis..."
+        android:textColor="@color/light_grey"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="381dp"
-        android:layout_height="488dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/image_border"
-        android:src="@drawable/ic_add_photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+    <!-- SCROLLABLE AREA -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/warningText"
+        app:layout_constraintBottom_toTopOf="@id/button_validate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        android:scaleType="centerInside"
-        app:tint="@color/light_blue" />
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="80dp">
 
+            <!-- Image de profil -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:contentDescription="Ajouter une photo"
+                android:src="@drawable/ic_add_photo"
+                android:background="@drawable/image_border"
+                android:scaleType="centerInside"
+                app:layout_constraintTop_toBottomOf="@id/warningText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Label description -->
+            <TextView
+                android:layout_marginTop="@dimen/_6sdp"
+                android:id="@+id/describeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Décrivez vous"
+                android:textColor="@color/less_light_white"
+                android:textSize="14sp" />
+
+            <!-- Zone de description -->
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/input_blue"
+                android:gravity="start|top"
+                android:hint="Décrivez-vous ici..."
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                android:textSize="13sp"
+                android:inputType="textMultiLine"
+                android:maxLines="5" />
+
+            <!-- Compteur description -->
+            <TextView
+                android:id="@+id/descriptionCharCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
+                android:text="0/300"
+                android:textColor="@color/light_grey"
+                android:textSize="12sp" />
+
+            <!-- Label intérêts -->
+            <TextView
+                android:id="@+id/interestsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Quelles sont vos centres d'intérêts"
+                android:textColor="@color/less_light_white"
+                android:textSize="14sp" />
+
+            <!-- Zone d’intérêts -->
+            <EditText
+                android:id="@+id/editTextInterests"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/input_blue"
+                android:gravity="start|top"
+                android:hint="Vos centres d'intérêts..."
+                android:padding="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_grey"
+                android:textSize="13sp"
+                android:inputType="textMultiLine"
+                android:maxLines="5" />
+
+            <!-- Compteur intérêts -->
+            <TextView
+                android:id="@+id/interestsCharCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
+                android:text="0/300"
+                android:textColor="@color/light_grey"
+                android:textSize="12sp" />
+
+            <!-- ESPACE pour simuler un 3ème champ invisible -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bouton valider -->
     <Button
         android:id="@+id/button_validate"
         android:layout_width="128dp"
         android:layout_height="@dimen/_35sdp"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:background="@drawable/blue_button"
+        android:layout_marginBottom="24dp"
         android:text="Valider"
         android:textColor="@color/white"
+        android:background="@drawable/blue_button"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

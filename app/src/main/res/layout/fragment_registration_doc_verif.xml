@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey"
+    tools:context=".registration.RegistrationDocVerifFragment">
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/title_verification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vérification de vos informations par l'IA"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/description_verification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cette vérification garantit la sécurité des utilisateurs et assure une utilisation correcte de l'application, en évitant les faux profils et en certifiant chaque compte."
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/_11sdp"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/title_verification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Label carte -->
+    <TextView
+        android:id="@+id/text_doc_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cartes étudiante ou carte d'identité"
+        android:textColor="@color/less_light_white"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintTop_toBottomOf="@id/description_verification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Zone d'ajout de document -->
+    <ImageView
+        android:id="@+id/doc_upload"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/ic_add_photo"
+        android:contentDescription="Ajouter un document"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/text_doc_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Bouton continuer -->
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="128dp"
+        android:layout_height="@dimen/_35sdp"
+        android:text="continuer"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_button"
+        app:backgroundTint="@null"
+        app:layout_constraintTop_toBottomOf="@id/doc_upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.95"
+        android:layout_marginTop="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
