@@ -1,4 +1,4 @@
-# 🎓 UnivDate — Application de rencontres universitaires  
+# 🎓 UnivDate Application de rencontres universitaires  
 
 **UnivDate** est une application mobile pensée pour les étudiants qui souhaitent élargir leur cercle social, faire de nouvelles rencontres et partager des centres d’intérêts communs au sein ou autour de leur université.  
 Elle combine un design moderne et intuitif avec un backend sécurisé pour gérer les profils, les photos et les préférences de rencontre.  
