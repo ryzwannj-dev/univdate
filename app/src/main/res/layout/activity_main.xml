@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#141118">
+
+    <!-- Section du haut avec fond beige -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#faeadc"
+        android:padding="50dp">
+
+        <ImageView
+            android:id="@+id/topImage"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:src="@drawable/univdatelogo"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+
+    <!-- Espace flexible pour centrer -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" />
+
+    <!-- Section du bas centrée -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <!-- Titre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Faites des rencontres"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Sous-texte -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Élargissez vos horizons et faites des rencontres enrichissantes tout au long de vos études."
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Bouton Login -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se connecter"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            android:background="@drawable/btn_purple"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Bouton Signup -->
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="S'inscrire"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            android:background="@drawable/btn_light"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Lien Forgot password -->
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mot de passe oublié?"
+            android:textSize="14sp"
+            android:textColor="#ad92c9"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Espace flexible pour centrer -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5" />
+
+</LinearLayout>

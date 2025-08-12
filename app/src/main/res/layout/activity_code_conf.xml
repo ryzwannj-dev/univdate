@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#141118"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- Espace en haut -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/btn_help"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_info"
+            android:contentDescription="Aide"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Titre -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrez votre code"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Sous-titre -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nous avons envoyé un code à votre email. Saisissez-le ci-dessous pour continuer. "
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/code1"
+            style="@style/CodeInput"
+            android:inputType="number"
+            android:maxLength="1"
+            android:layout_marginRight="8dp" />
+
+        <EditText
+            android:id="@+id/code2"
+            style="@style/CodeInput"
+            android:inputType="number"
+            android:maxLength="1"
+            android:layout_marginRight="8dp" />
+
+        <EditText
+            android:id="@+id/code3"
+            style="@style/CodeInput"
+            android:inputType="number"
+            android:maxLength="1"
+            android:layout_marginRight="8dp" />
+
+        <EditText
+            android:id="@+id/code4"
+            style="@style/CodeInput"
+            android:inputType="number"
+            android:maxLength="1"
+            android:layout_marginRight="8dp" />
+
+        <EditText
+            android:id="@+id/code5"
+            style="@style/CodeInput"
+            android:inputType="number"
+            android:maxLength="1"
+            android:layout_marginRight="8dp" />
+
+        <EditText
+            android:id="@+id/code6"
+            style="@style/CodeInput"
+            android:inputType="number"
+            android:maxLength="1" />
+    </LinearLayout>
+
+    <!-- Texte bas -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vous n’avez pas reçu le code ?"
+        android:textColor="#ab9db9"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tv_resend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Renvoyer un code"
+        android:textColor="#ab9db9"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingBottom="32dp" />
+
+    <!-- Bouton Continue en bas -->
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Continuer"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@null"
+        android:background="@drawable/btn_purple"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+</LinearLayout>

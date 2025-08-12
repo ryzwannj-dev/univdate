@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Univdate</string>
+    <string-array name="relationship_types">
+        <item>Type de relation</item>
+        <item>Amical</item>
+        <item>Sérieux</item>
+        <item>Sans engagement</item>
+    </string-array>
+
+    <string-array name="iam_gender">
+        <item>Je suis un(e)</item>
+        <item>Homme</item>
+        <item>Femme</item>
+        <item>Autre</item>
+    </string-array>
+
+    <string-array name="gender_preferences">
+        <item>Je recherche des...</item>
+        <item>Hommes</item>
+        <item>Femmes</item>
+        <item>Tous</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#141118"
+    android:fitsSystemWindows="true"
+    android:padding="0dp">
+
+    <!-- Header avec bouton fermer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#141118"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical|end"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Fermer"
+            android:src="@drawable/ic_close_white"
+            android:padding="8dp"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Image -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/image_sent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Image"
+            android:src="@drawable/wait"
+            android:background="@drawable/rounded_corners"
+            android:clipToOutline="true" />
+    </FrameLayout>
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informations envoyées"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.015"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="12dp"
+        android:gravity="center" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vos informations ont été transmises avec succès et sont en cours de vérification par notre système d'IA. Ce processus peut prendre jusqu'à 24 heures. Nous vous remercions de votre patience et de votre compréhension."
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Bouton bas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Retourner à l'accueil"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:backgroundTint="@null"
+            android:background="@drawable/btn_purple" />
+    </LinearLayout>
+
+
+    <!-- Espace bas -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#141118" />
+
+</LinearLayout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#141118"
+    android:paddingTop="24dp"
+    android:fitsSystemWindows="true"
+    android:paddingBottom="0dp">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="center_vertical"
+        android:background="#141118">
+
+        <ImageButton
+            android:id="@+id/backArrow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_left"
+            android:contentDescription="Retour"
+            app:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Créer un profil"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="-0.015" />
+    </RelativeLayout>
+
+    <!-- Progress dots -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/dot1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/circle_white" />
+
+        <View
+            android:id="@+id/dot2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/circle_dimmed" />
+
+        <View
+            android:id="@+id/dot3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/circle_dimmed" />
+    </LinearLayout>
+
+    <!-- Contenu principal -->
+    <FrameLayout
+        android:id="@+id/frameContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/scrollContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <!-- Photo de profil -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <ImageView
+                        android:id="@+id/profilePhoto"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_avatar"
+                        android:background="@drawable/circle_rounded"
+                        android:contentDescription="Photo de profil" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ajouter une photo"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"
+                        android:letterSpacing="-0.015"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Choisissez une photo de profil pour commencer"
+                        android:textColor="#ab9db9"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Inputs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <EditText
+                        android:id="@+id/pseudoInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="Pseudo"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#ab9db9"
+                        android:textSize="16sp"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/birthdayInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="Date de naissance"
+                        android:paddingHorizontal="16dp"
+                        android:importantForAutofill="no"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#ab9db9"
+                        android:textSize="16sp"
+                        android:inputType="date" />
+
+                    <EditText
+                        android:id="@+id/locationInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/input_bg"
+                        android:hint="Lieu"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#ab9db9"
+                        android:textSize="16sp"
+                        android:inputType="textPostalAddress|textCapWords"
+                        />
+
+                    <Spinner
+                        android:id="@+id/iamASpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/input_bg"
+                        android:paddingHorizontal="5dp"
+                        android:popupBackground="#302839"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/relationshipTypeSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:paddingHorizontal="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/input_bg"
+                        android:popupBackground="#302839"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/genderPreferenceSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/input_bg"
+                        android:paddingHorizontal="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:popupBackground="#302839"
+                        android:spinnerMode="dropdown" />
+
+                    <!-- Bouton -->
+                    <Button
+                        android:id="@+id/btn_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="Continuer"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_purple"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
