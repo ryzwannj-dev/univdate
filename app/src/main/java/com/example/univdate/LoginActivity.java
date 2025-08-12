@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.univdate.app.HomeActivity;
 import com.example.univdate.registration.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -57,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Connexion réussie pour : " + username, Toast.LENGTH_SHORT).show();
 
             // Exemple : rediriger vers l'activité principale
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             finish();
         });
